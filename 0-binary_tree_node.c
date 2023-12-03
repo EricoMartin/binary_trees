@@ -16,17 +16,15 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value){
 	
 	binary_tree_t *node;
 	
-	if (*parent == NULL)
-		return NULL;
-	node = malloc(sizeof(*parent)* 2);
+	node = malloc(sizeof(binary_tree_t));
 
-	node = createNode(value, parent);
-	return *node;
-}
-
-binary_tree_t *createNode(int value, binary_tree_t *parent_data){
-	binary_tree_t *nodeNew = new binary_tree_t();
-	nodeNew->n = value;
-	nodeNew->parent = parent_data;
-	nodeNew->left = nodeNew->right = NULL;
+	if (!node){
+                return NULL;
+	}
+	else {
+		node->n = value;
+        	node->parent = parent;
+        	node->left = node->right = NULL;
+		return (node);
+	}
 }
